@@ -1,0 +1,20 @@
+{% extends "api/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <form action = "{% url 'search' %}" method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Search</legend>
+                <label for="your_name">Search Text: </label>
+                <input id="query" type="text" name="query">
+                <input type="submit" value="OK">
+               
+            </fieldset>
+            <!-- <div class="form-group">
+                <a href="{% url 'search' %}">Get Notes</a>
+            </div> -->
+        </form>
+
+    </div>
+{% endblock content %}
